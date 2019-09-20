@@ -1,0 +1,3 @@
+capybara-py
+getgauge
+selenium
