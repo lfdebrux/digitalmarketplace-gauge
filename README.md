@@ -1,4 +1,4 @@
-# digitalmarketplace-spec
+# Digital Marketplace tests - Gauge + Capybara + page object models
 
 ## Getting started
 
