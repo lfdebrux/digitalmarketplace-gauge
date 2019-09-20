@@ -1,0 +1,18 @@
+{
+  "numberOfSuppliers": 7,
+  "technicalWeighting": 60,
+  "culturalWeighting": 20,
+  "priceWeighting": 20,
+  "essentialRequirements": [
+    "Essential requirement number one",
+    "Essential requirement number two",
+    "Essential requirement number three"
+  ],
+  "niceToHaveRequirements": [
+    "The first nice to have requirement",
+    "A second nice to have requirement"
+  ],
+  "culturalFitCriteria": [
+    "Cultural fit (1)"
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "Specialist Role": {"action": "choose", "locator": "Cyber security consultant"},
+  "Location": {"action": "choose", "locator": "South East England"},
+  "Description of work": {
+    "Add organisation": {"action": "fill_in", "locator": ";asdfadsf"},
+    "Add responsibilities": {"action": "fill_in", "locator": "asd;fkjasd;fkljasd;flkjasd;klfjasd"},
+    "Describe existing team": {"action": "fill_in", "locator": "k;lfaskfsf"},
+    "Describe where the supplier will work": {"action": "fill_in", "locator": ";alkdfjaksdf"},
+    "Describe working arrangements": {"action": "fill_in", "locator": ";alkdfjaksdf"},
+    "Set latest start date": {"action": "fill_in", "locator": ";alkdfjaksdf"},
+    "Provide a summary of the work": {"action": "fill_in", "locator": ";alskfdadsf"}
+  }
+}
