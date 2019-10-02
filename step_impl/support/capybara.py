@@ -1,5 +1,5 @@
-
 import capybara
+from getgauge.python import custom_screen_grabber
 
 capybara.app = None  # Tell capybara not to spin up a server
 
@@ -17,3 +17,12 @@ def init_selenium_chrome_headless_driver(app):
     options.headless = True
 
     return Driver(app, browser="chrome", options=options)
+
+
+@custom_screen_grabber
+def take_screenshot():
+    current_driver = capybara.current_driver or capybara.default_driver
+    if "selenium" in current_driver:
+        return capybara.current_session().driver.browser.get_screenshot_as_png()
+    else:
+        return _take_screenshot()
