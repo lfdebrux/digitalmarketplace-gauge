@@ -1,0 +1,12 @@
+
+version: '3.0'
+
+services:
+  bdd-tests:
+    build: .
+    image: digitalmarketplace/bdd-tests
+    cap_add:
+      - SYS_ADMIN
+    volumes:
+      - /dev/shm:/dev/shm
+      - .:/app
