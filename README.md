@@ -6,9 +6,7 @@ Install [Gauge][gauge]:
 
     brew install getgauge
 
-Alternatively (for instance if you're not on macOS)
-
-    npm install -g @getgauge/cli
+Alternatively you can install manually, see https://docs.gauge.org/installation.html.
 
 If you don't want to send (anonymous) usage data to ThoughtWorks turn Gauge telemetry off:
 
@@ -17,5 +15,7 @@ If you don't want to send (anonymous) usage data to ThoughtWorks turn Gauge tele
 Install the Python requirements:
 
     pip3 install -r requirements.txt
+
+Then run the tests with `gauge run`.
 
 [gauge]: https://gauge.org/
