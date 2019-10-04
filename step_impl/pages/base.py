@@ -6,12 +6,18 @@ from capybara.dsl import DSLMixin, page
 
 class PageMeta(type):
     def __new__(cls, clsname, bases, clsdict):
+        obj = super().__new__(cls, clsname, bases, clsdict)
         has_methods = {}
         for name, attr in clsdict.items():
             if hasattr(attr, "__has__"):
-                has_methods[f"has_{name}"] = functools.partialmethod(attr.__has__)
-        clsdict.update(has_methods)
-        return super().__new__(cls, clsname, bases, clsdict)
+                setattr(obj, f"has_{name}", cls._make_has_method(attr))
+        return obj
+
+    @staticmethod
+    def _make_has_method(attr):
+        def _has_method(self):
+            return attr.__has__(self)
+        return _has_method
 
 
 class Element:
