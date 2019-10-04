@@ -16,7 +16,11 @@ def init_selenium_chrome_headless_driver(app):
     options = Options()
     options.headless = True
 
-    return Driver(app, browser="chrome", options=options)
+    driver = Driver(app, browser="chrome", options=options)
+    window = driver.current_window_handle
+    driver.resize_window_to(window, 1366, 768)
+
+    return driver
 
 
 @custom_screen_grabber
