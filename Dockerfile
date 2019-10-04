@@ -15,6 +15,7 @@ ARG USER_UID=2000
 
 RUN apt-get update && apt-get install -y \
 		curl \
+		git \
 		gnupg \
 		python3 \
 		python3-pip \
@@ -52,16 +53,15 @@ RUN curl -LO https://github.com/getgauge/gauge/releases/download/v$GAUGE_VERSION
 RUN curl -L https://bintray.com/gauge/gauge-python/download_file?file_path=gauge-python-$GAUGE_PYTHON_VERSION.zip \
 		> gauge-python-$GAUGE_PYTHON_VERSION.zip \
 	&& gauge install python -f gauge-python-$GAUGE_PYTHON_VERSION.zip \
-	&& rm gauge-python-$GAUGE_PYTHON_VERSION.zip \
-	&& pip3 install --no-cache getgauge==0.3.6.dev20190828
+	&& rm gauge-python-$GAUGE_PYTHON_VERSION.zip
 
 RUN mkdir -p /app && chown -R $USER:$USER /app
 WORKDIR /app
 
-COPY manifest.json requirements.txt ./
+COPY constraints.txt requirements.txt manifest.json ./
 COPY env ./
 
-RUN pip3 install --no-cache-dir -r requirements.txt \
+RUN pip3 install --no-cache-dir -r requirements.txt -c constraints.txt \
 	&& gauge install
 
 USER user

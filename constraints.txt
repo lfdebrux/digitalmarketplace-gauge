@@ -1,0 +1,2 @@
+getgauge==0.3.6.dev20190828
+git+https://github.com/lfdebrux/capybara.py.git@ldeb-fix-dsl-mixin#egg=capybara-py==0.1.6-4-g63aad0
