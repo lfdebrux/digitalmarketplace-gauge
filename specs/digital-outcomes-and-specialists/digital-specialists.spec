@@ -1,4 +1,5 @@
 # Find an individual specialist
+tags: skip
 
 * When there is an open "Digital Outcomes and Specialists 3" framework
 * With a buyer user

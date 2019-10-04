@@ -9,7 +9,7 @@ pipeline {
     stage('Test') {
       steps {
         ansiColor('xterm') {
-          sh 'gauge run'
+          sh "gauge run --tags '!skip'"
         }
       }
       post {
